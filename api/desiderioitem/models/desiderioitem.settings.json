@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "desiderioitems",
+  "info": {
+    "name": "desiderioitem",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "place": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "category": {
+      "via": "desiderioitems",
+      "model": "category"
+    },
+    "desideriolist": {
+      "model": "desideriolist",
+      "via": "desiderioitems"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "desiderioitems"
+    },
+    "bought_by": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "desiderioitems_bought"
+    }
+  }
+}

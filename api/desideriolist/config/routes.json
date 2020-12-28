@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/desideriolists",
+      "handler": "desideriolist.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/desideriolists/count",
+      "handler": "desideriolist.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/desideriolists/:id",
+      "handler": "desideriolist.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/desideriolists",
+      "handler": "desideriolist.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/desideriolists/:id",
+      "handler": "desideriolist.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/desideriolists/:id",
+      "handler": "desideriolist.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
