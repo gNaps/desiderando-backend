@@ -60,16 +60,19 @@
       "configurable": false
     },
     "desideriolists": {
-      "via": "users",
-      "collection": "desideriolist"
+      "private": true,
+      "collection": "desideriolist",
+      "via": "users"
     },
     "desiderioitems": {
-      "via": "users",
-      "collection": "desiderioitem"
+      "private": true,
+      "collection": "desiderioitem",
+      "via": "users"
     },
     "desiderioitems_bought": {
-      "via": "bought_by",
-      "collection": "desiderioitem"
+      "private": true,
+      "collection": "desiderioitem",
+      "via": "bought_by"
     }
   }
 }

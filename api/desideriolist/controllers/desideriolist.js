@@ -13,10 +13,26 @@ module.exports = {
     //console.log(ctx.state)
     const { id } = ctx.state.user
 
-    if (ctx.query._q) {
-      entities = await strapi.services.desideriolist.search(ctx.query, id);
-    } else {
-      entities = await strapi.services.desideriolist.find(ctx.query, id);
+    entities = await strapi.services.desideriolist.find(id);
+
+    if(entities) {
+      entities.map((entity) => {
+        if(entity.desiderioitems) {
+          //count many gifts left
+          entity.gifts_left = entity.desiderioitems.filter((element) => { return element.bought_by === null}).length
+
+          //questo non serve al backend
+          // if(entity.what_bought && !entity.who_bought) {
+          //   entity.desiderioitems.map((desiderio) => {
+          //     if(desiderio.bought_by !== null) {
+          //       desiderio.bought_by = 'someone'
+          //     } 
+          //    })
+          // } else if(!entity.what_bought) {
+          //   entity.desiderioitems.map((desiderio) => desiderio.bought_by = null)
+          // }
+        }
+      })
     }
 
     return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.desideriolist }));

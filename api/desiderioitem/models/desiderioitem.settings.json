@@ -36,14 +36,14 @@
       "targetField": "name"
     },
     "users": {
+      "via": "desiderioitems",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "desiderioitems"
+      "model": "user"
     },
     "bought_by": {
+      "via": "desiderioitems_bought",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "desiderioitems_bought"
+      "model": "user"
     }
   }
 }

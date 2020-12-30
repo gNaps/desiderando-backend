@@ -12,8 +12,8 @@ module.exports = {
      * @return {Promise}
      */
     find(params, populate) {
-        console.log(populate)
-        return strapi.query('desideriolist').find({ users: populate });
+        console.log(params)
+        return strapi.query('desideriolist').find({ users: params }, ['desiderioitems']);
     },
     /**
      * Promise to fetch record
@@ -23,6 +23,6 @@ module.exports = {
 
     findOne(params) {
         console.log(params)
-        return strapi.query('desideriolist').findOne(params);
+        return strapi.query('desideriolist').findOne(params, ['desiderioitems']);
     },
 };
