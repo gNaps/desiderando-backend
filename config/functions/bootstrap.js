@@ -10,18 +10,18 @@
  * See more details here: https://strapi.io/documentation/developer-docs/latest/concepts/configurations.html#bootstrap
  */
 
-module.exports = () => {
+module.exports = async() => {
 
     try {
         if (strapi.connections.default.client.config.client === "pg") {
           await strapi.connections.default.raw(
             `CREATE OR REPLACE FUNCTION lower(id INTEGER)
-        RETURNS TEXT AS $$
-    BEGIN
-        -- casts integer to text
-        RETURN lower(cast(id as TEXT));
-    END; $$
-    LANGUAGE plpgsql`
+            RETURNS TEXT AS $$
+            BEGIN
+            -- casts integer to text
+            RETURN lower(cast(id as TEXT));
+            END; $$
+            LANGUAGE plpgsql`
           );
         }
       } catch (err) {
