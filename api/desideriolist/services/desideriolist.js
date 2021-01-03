@@ -16,7 +16,7 @@ module.exports = {
         const myList = await strapi.query('desideriolist').find({ users: params }, []);
 
         console.log('secondo find')
-        const invited = await strapi.query('desideriolist').find({ invited_users_contains: params.toString() }, [])
+        const invited = await strapi.query('desideriolist').find({ invited_users_contains: params }, [])
 
         console.log('ho terminato e inizio i cilci for')
 
