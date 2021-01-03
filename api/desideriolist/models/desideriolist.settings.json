@@ -30,9 +30,9 @@
       "type": "boolean"
     },
     "users": {
-      "via": "desideriolists",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "desideriolists"
     },
     "slug": {
       "type": "uid",
@@ -41,12 +41,16 @@
     "invited_users": {
       "plugin": "users-permissions",
       "collection": "user",
-      "via": "desideriolists",
+      "via": "desideriolists_invited",
       "dominant": true
     },
     "desiderioitems": {
+      "collection": "desiderioitem",
+      "via": "desideriolist"
+    },
+    "invites": {
       "via": "desideriolist",
-      "collection": "desiderioitem"
+      "collection": "invite"
     }
   }
 }

@@ -73,6 +73,14 @@
       "private": true,
       "collection": "desiderioitem",
       "via": "bought_by"
+    },
+    "desideriolists_invited": {
+      "via": "invited_users",
+      "collection": "desideriolist"
+    },
+    "invite": {
+      "via": "user",
+      "model": "invite"
     }
   }
 }

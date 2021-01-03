@@ -28,8 +28,8 @@
       "model": "category"
     },
     "desideriolist": {
-      "model": "desideriolist",
-      "via": "desiderioitems"
+      "via": "desiderioitems",
+      "model": "desideriolist"
     },
     "slug": {
       "type": "uid",
