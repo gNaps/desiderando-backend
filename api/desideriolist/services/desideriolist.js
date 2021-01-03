@@ -12,8 +12,11 @@ module.exports = {
      * @return {Promise}
      */
     async find(params, populate) {
+        console.log('inizio il find')
         const myList = await strapi.query('desideriolist').find({ users: params }, []);
         const invited = await strapi.query('desideriolist').find({ invited_users_contains: params }, [])
+
+        console.log('ho terminato e inizio i cilci for')
 
         if(myList.length > 0) {
             for(let i = 0; i < myList.length; i++) {

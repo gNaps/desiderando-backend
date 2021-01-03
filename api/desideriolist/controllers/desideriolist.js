@@ -18,25 +18,8 @@ module.exports = {
       const entity = await strapi.services.desideriolist.findOne(ctx.query)
       return sanitizeEntity(entity, { model: strapi.models.desideriolist })
     } else {
+      console.log('sono in else e chiamo il find')
       entities = await strapi.services.desideriolist.find(id);
-
-      if(entities) {
-        entities.map(async (entity) => {
-            //entity.gifts_left = await strapi.services.desiderioitem.countGiftsLeft(entity.id)
-            //console.log('entity.gifts_left', entity.gifts_left)
-
-            //questo non serve al backend
-            // if(entity.what_bought && !entity.who_bought) {
-            //   entity.desiderioitems.map((desiderio) => {
-            //     if(desiderio.bought_by !== null) {
-            //       desiderio.bought_by = 'someone'
-            //     } 
-            //    })
-            // } else if(!entity.what_bought) {
-            //   entity.desiderioitems.map((desiderio) => desiderio.bought_by = null)
-            // }
-        })
-      }
     }
 
     //console.log('arrivo qui entities', entities)
