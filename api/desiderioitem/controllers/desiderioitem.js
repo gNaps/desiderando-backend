@@ -90,6 +90,7 @@ module.exports = {
         desiderio.slug = slugify(desiderio.name);
 
         entity = await strapi.services.desiderioitem.create(desiderio);
+<<<<<<< HEAD
 
         delete entity.users.blocked;
         delete entity.users.confirmed;
@@ -99,6 +100,8 @@ module.exports = {
         delete entity.users.role;
         delete entity.users.updated_at;
 
+=======
+>>>>>>> 71a546a6e1025baf48b48f61582e930ce9de6587
         return sanitizeEntity(entity, { model: strapi.models.desiderioitem });
     },
 
