@@ -68,6 +68,7 @@ module.exports = {
 
     async update(listId, name) {
         const entity = await strapi.query('desideriolist').update({id: listId}, {name: name})
+        
 
         delete entity.users.blocked
         delete entity.users.confirmationToken
