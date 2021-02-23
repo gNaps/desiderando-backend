@@ -24,15 +24,11 @@ module.exports = {
             for(let i = 0; i < myList.length; i++) {
                 console.log('i', i)
                 myList[i].invited = false;
-<<<<<<< HEAD
                 myList[i].gifts_left = await strapi.services.desiderioitem.countGiftsLeft({id: myList[i].id});
 
                 const owner =  await strapi.query('user', 'users-permissions').findOne({ id: myList[i].users }, ["username"]);
                 myList[i].owner = owner.username;
                 console.log("owner ", myList[i].owner)
-=======
-                myList[i].gifts_left = await strapi.services.desiderioitem.countGiftsLeft({id: myList[i].id})
->>>>>>> 71a546a6e1025baf48b48f61582e930ce9de6587
             }
         }
 
@@ -42,13 +38,10 @@ module.exports = {
             for(let i = 0; i < invited.length; i++) {
                 invited[i].invited = true;
                 invited[i].gifts_left = await strapi.services.desiderioitem.countGiftsLeft({id: invited[i].id})
-<<<<<<< HEAD
 
                 const owner =  await strapi.query('user', 'users-permissions').findOne({ id: invited[i].users }, ["username"]);
                 invited[i].owner = owner.username;
                 console.log("owner ", invited[i].owner)
-=======
->>>>>>> 71a546a6e1025baf48b48f61582e930ce9de6587
             }
         }
 
@@ -60,23 +53,17 @@ module.exports = {
      * @return {Promise}
      */
 
-<<<<<<< HEAD
     async findOne(params) {
         const owner =  await strapi.query('user', 'users-permissions').findOne({ id: params.users }, []);
         const list = await strapi.query('desideriolist').findOne(params, ['desiderioitems']);
 
         list.owner = owner.username;
         return list;
-=======
-    findOne(params) {
-        return strapi.query('desideriolist').findOne(params, ['desiderioitems']);
->>>>>>> 71a546a6e1025baf48b48f61582e930ce9de6587
     },
 
     async invitesUser(user, listId, lists) {
         const entity = await strapi.query('user', 'users-permissions').update({id: user}, {desideriolists_invited: [...lists, listId]})
         return entity
-<<<<<<< HEAD
     },
 
     async update(listId, name) {
@@ -96,7 +83,5 @@ module.exports = {
         delete entity.users.updated_by 
         
         return entity
-=======
->>>>>>> 71a546a6e1025baf48b48f61582e930ce9de6587
     }
 };

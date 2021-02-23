@@ -99,7 +99,6 @@ module.exports = {
     entity = await strapi.services.desideriolist.invitesUser(userToInvite[0].id, listId, invited);
 
     return sanitizeEntity(entity, { model: strapi.plugins['users-permissions'].models.user });
-<<<<<<< HEAD
   },
 
   async update(ctx) {
@@ -133,7 +132,5 @@ module.exports = {
     entity = await strapi.services.desideriolist.update(listId, listName);
 
     return sanitizeEntity(entity, { model: strapi.plugins['users-permissions'].models.user });
-=======
->>>>>>> 71a546a6e1025baf48b48f61582e930ce9de6587
   }
 };
