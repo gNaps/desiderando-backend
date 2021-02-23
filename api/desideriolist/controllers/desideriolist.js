@@ -131,6 +131,7 @@ module.exports = {
     let entity;
     entity = await strapi.services.desideriolist.update(listId, listName);
 
+    
     return sanitizeEntity(entity, { model: strapi.plugins['users-permissions'].models.user });
   }
 };
