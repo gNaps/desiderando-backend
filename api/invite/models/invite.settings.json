@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invites",
+  "info": {
+    "name": "Invite",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Token": {
+      "type": "uid"
+    },
+    "desideriolist": {
+      "model": "desideriolist",
+      "via": "invites"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "invite"
+    }
+  }
+}

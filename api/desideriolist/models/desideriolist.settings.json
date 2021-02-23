@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "desideriolists",
+  "info": {
+    "name": "desideriolist",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "required_password": {
+      "type": "boolean"
+    },
+    "password": {
+      "type": "password"
+    },
+    "what_bought": {
+      "type": "boolean"
+    },
+    "who_bought": {
+      "type": "boolean"
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "desideriolists"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "invited_users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "desideriolists_invited",
+      "dominant": true
+    },
+    "desiderioitems": {
+      "collection": "desiderioitem",
+      "via": "desideriolist"
+    },
+    "invites": {
+      "via": "desideriolist",
+      "collection": "invite"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/desiderioitems",
+      "handler": "desiderioitem.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/desiderioitems/count",
+      "handler": "desiderioitem.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/desiderioitems/count/:id",
+      "handler": "desiderioitem.countGiftsLeft",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/desiderioitems/:id",
+      "handler": "desiderioitem.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/desiderioitems",
+      "handler": "desiderioitem.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/desiderioitems/:id",
+      "handler": "desiderioitem.insertNewDesiderio",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/desiderioitems/:id",
+      "handler": "desiderioitem.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/desiderioitems/book/:id",
+      "handler": "desiderioitem.bookDesiderio",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/desiderioitems/:id",
+      "handler": "desiderioitem.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
