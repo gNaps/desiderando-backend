@@ -13,16 +13,12 @@ module.exports = {
     
     const { id } = ctx.state.user
     if (ctx.query.slug) {
-      console.log('yo', ctx.query)
-      //entities = await strapi.services.desideriolist.search(ctx.query);
       const entity = await strapi.services.desideriolist.findOne(ctx.query)
       return sanitizeEntity(entity, { model: strapi.models.desideriolist })
     } else {
       console.log('sono in else e chiamo il find')
       entities = await strapi.services.desideriolist.find(id);
     }
-
-    //console.log('arrivo qui entities', entities)
 
     return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.desideriolist }));
   },
@@ -123,7 +119,7 @@ module.exports = {
     if(!creatorList || creatorList.length === 0) {
       ctx.throw(404);
     } else {
-      if(!creatorList[0].public && creatorList[0].users != currentUser) {
+      if(creatorList[0].users != currentUser) {
         ctx.throw(403);
       }
     }
@@ -133,5 +129,23 @@ module.exports = {
 
     
     return sanitizeEntity(entity, { model: strapi.plugins['users-permissions'].models.user });
-  }
+  },
+
+  async delete(ctx) {
+    const { id } = ctx.params;
+    const currentUser = ctx.state.user.id
+
+    const creatorList = await strapi.query('desideriolist').find({ id: id }, [])
+    console.log('creatorList', creatorList)
+
+    if(!creatorList || creatorList.length === 0) {
+      ctx.throw(404, "list not found");
+    } else {
+      if(creatorList[0].users != currentUser) {
+        ctx.throw(403);
+      }
+    }
+
+    return strapi.services.desideriolist.delete({ id });
+  },
 };
