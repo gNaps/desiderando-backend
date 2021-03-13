@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settings",
+  "info": {
+    "name": "Setting",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "setting_key": {
+      "type": "string"
+    },
+    "setting_value": {
+      "type": "richtext"
+    }
+  }
+}

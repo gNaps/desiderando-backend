@@ -6,4 +6,5 @@ module.exports = ({ env }) => ({
       secret: env('ADMIN_JWT_SECRET', 'fbcb037ea967cad706ed3c930cbb1664'),
     },
   },
+  url: 'https://desiderando.herokuapp.com'
 });
