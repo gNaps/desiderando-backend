@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tokenusers",
+      "handler": "tokenuser.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tokenusers/count",
+      "handler": "tokenuser.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tokenusers/:id",
+      "handler": "tokenuser.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tokenusers/updatePasswordByToken",
+      "handler": "tokenuser.updatePasswordByToken",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tokenusers",
+      "handler": "tokenuser.updatePasswordByToken",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tokenusers/:id",
+      "handler": "tokenuser.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tokenusers/:id",
+      "handler": "tokenuser.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

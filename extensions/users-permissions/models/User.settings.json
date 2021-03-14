@@ -81,6 +81,10 @@
     "invite": {
       "via": "user",
       "model": "invite"
+    },
+    "tokenusers": {
+      "via": "user_tokenuser",
+      "collection": "tokenuser"
     }
   }
 }

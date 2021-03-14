@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tokenusers",
+  "info": {
+    "name": "Tokenuser",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "token": {
+      "type": "string"
+    },
+    "user_tokenuser": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "tokenusers"
+    }
+  }
+}
